@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Disney Gallery</title>
+</head>
+<body>
+
+  <h1 style="font-family: Impact;text-align: center; color: rgb(255, 255, 255); text-shadow: 5px 5px black; padding-top: 5px;">Disney Image Gallery</h1>
+
+  <div class="container">
+    <div class="slide">
+
+      <div class="item" style="background-image: url(img/lionking.jpg);">
+        <div class="content">
+          <div class="name">The Lion King</div>
+          <div class="des">Follow Simba’s journey from a young cub to the rightful King of the Pride Lands in this legendary Disney classic.</div>
+          <button class="open-overlay" data-movie="lionking">See</button>
+        </div>
+      </div>
+
+      <div class="item" id="i" style="background-image: url(img/mickey.jpg);">
+        <div class="content">
+          <div class="name">Mickey Mouse</div>
+          <div class="des">The iconic Mickey Mouse, created by Walt Disney, has been entertaining audiences since 1928 with his charm and adventures.</div>
+          <button class="open-overlay" data-movie="mickey">See</button>
+        </div>
+      </div>
+
+      <div class="item" style="background-image: url(img/frozen.jpg);">
+        <div class="content">
+          <div class="name">Frozen</div>
+          <div class="des">Experience the magic of Elsa and Anna as they embark on a journey of love, adventure, and self-discovery.</div>
+          <button class="open-overlay" data-movie="frozen">See</button>
+        </div>
+      </div>
+
+      <div class="item" style="background-image: url(img/toystory.webp);">
+        <div class="content">
+          <div class="name">Toy Story</div>
+          <div class="des">Join Woody, Buzz, and the gang as they navigate friendship, adventure, and the meaning of being a toy.</div>
+          <button class="open-overlay" data-movie="toystory">See</button>
+        </div>
+      </div>
+
+      <div class="item" style="background-image: url(img/car.avif);">
+        <div class="content">
+          <div class="name">Cars</div>
+          <div class="des">Lightning McQueen, a hotshot race car, learns the true meaning of friendship and teamwork in the small town of Radiator Springs.</div>
+          <button class="open-overlay" data-movie="car">See</button>
+        </div>
+      </div>
+
+      <div class="item" style="background-image: url(img/inout.avif);">
+        <div class="content">
+          <div class="name">Inside Out</div>
+          <div class="des">Join Joy, Sadness, Anger, Fear, and Disgust as they navigate Riley’s emotions in this heartwarming journey inside her mind.</div>
+          <button class="open-overlay" data-movie="inout">See</button>
+        </div>
+      </div>
+
+      <div class="item" style="background-image: url(img/avenger.webp);">
+        <div class="content">
+          <div class="name">Avengers</div>
+          <div class="des">The Avengers are a team of Marvel superheroes who unite to protect Earth from powerful threats, facing legendary battles against villains like Loki and Thanos.</div>
+          <button class="open-overlay" data-movie="avenger">See</button>
+          </div>
+      </div>
+
+    </div>
+    <div class="button">
+      <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <div class="overlay" id="lionking">
+    <span class="close">&times;</span>
+    <img src="img/lionking.jpg" alt="The Lion King">
+  </div>
+  <div class="overlay" id="mickey">
+    <span class="close">&times;</span>
+    <img src="img/mickey.jpg" alt="Mickey">
+  </div>
+  <div class="overlay" id="frozen">
+    <span class="close">&times;</span>
+    <img src="img/frozen.jpg" alt="Frozen">
+  </div>
+  <div class="overlay" id="toystory">
+    <span class="close">&times;</span>
+    <img src="img/toystory.webp" alt="Toy Story">
+  </div>
+  <div class="overlay" id="car">
+    <span class="close">&times;</span>
+    <img src="img/car.avif" alt="Cars">
+  </div>
+  <div class="overlay" id="inout">
+    <span class="close">&times;</span>
+    <img src="img/inout.avif" alt="Inside Out">
+  </div>
+  <div class="overlay" id="avenger">
+    <span class="close">&times;</span>
+    <img src="img/avenger.webp" alt="Avengers">
+  </div>
+
+  <footer style="position: fixed;bottom: 0;background-color: rgb(255, 255, 255); width: 100%;">
+    <p style="text-align: center; color: rgb(0, 0, 0);"> @  ZAHID HYDRI</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>

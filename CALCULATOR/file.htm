@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e3a8a, #9333ea);
+    }
+    
+    .calculator {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+    
+    .btn {
+      transition: all 0.2s ease-in-out;
+    }
+    
+    .btn:hover {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    input {
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen text-white">
+  
+  <div class="calculator w-80 p-6 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold text-center mb-4">📲 Calculator</h1>
+    
+    <input type="text" id="display" class="w-full p-3 text-2xl bg-gray-900 text-white rounded-lg mb-3" readonly>
+    
+    <div class="grid grid-cols-4 gap-3">
+      <button class="btn bg-gray-800 p-3 text-2xl rounded-lg" onclick="clearDisplay()">C</button>
+      <button class="btn bg-gray-800 p-3 text-2xl rounded-lg" onclick="deleteLast()">⌫</button>
+      <button class="btn bg-gray-800 p-3 text-2xl rounded-lg" onclick="appendToDisplay('%')">%</button>
+      <button class="btn bg-orange-500 p-3 text-2xl rounded-lg" onclick="appendToDisplay('/')">÷</button>
+      
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('7')">7</button>
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('8')">8</button>
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('9')">9</button>
+      <button class="btn bg-orange-500 p-3 text-2xl rounded-lg" onclick="appendToDisplay('*')">×</button>
+      
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('4')">4</button>
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('5')">5</button>
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('6')">6</button>
+      <button class="btn bg-orange-500 p-3 text-2xl rounded-lg" onclick="appendToDisplay('-')">−</button>
+      
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('1')">1</button>
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('2')">2</button>
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('3')">3</button>
+      <button class="btn bg-orange-500 p-3 text-2xl rounded-lg" onclick="appendToDisplay('+')">+</button>
+      
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg col-span-2" onclick="appendToDisplay('0')">0</button>
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('.')">.</button>
+      <button class="btn bg-green-500 p-3 text-2xl rounded-lg" onclick="calculateResult()">=</button>
+    </div>
+  </div>
+  
+  <script>
+    const display = document.getElementById("display");
+    
+    function appendToDisplay(value) {
+      display.value += value;
+    }
+    
+    function clearDisplay() {
+      display.value = "";
+    }
+    
+    function deleteLast() {
+      display.value = display.value.slice(0, -1);
+    }
+    
+    function calculateResult() {
+      try {
+        display.value = eval(display.value);
+      } catch {
+        display.value = "Error";
+      }
+    }
+    
+    // Keyboard Support
+    document.addEventListener("keydown", function(event) {
+      if ("0123456789+-*/.%".includes(event.key)) {
+        appendToDisplay(event.key);
+      } else if (event.key === "Enter") {
+        calculateResult();
+      } else if (event.key === "Backspace") {
+        deleteLast();
+      } else if (event.key === "Escape") {
+        clearDisplay();
+      }
+    });
+  </script>
+  
+</body>
+
+</html>
