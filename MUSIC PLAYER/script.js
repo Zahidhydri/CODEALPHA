@@ -1,7 +1,9 @@
 
 const songs = [
-    { title: "Song 1", src: "song1.mp3", img: "https://via.placeholder.com/100" },
-    { title: "Song 2", src: "song2.mp3", img: "https://via.placeholder.com/100" }
+    { title: "Song 1", src: "music/01. Ground Theme.mp3", img: "img.jpg" },
+    { title: "Song 2", src: "music/02. Underground Theme.mp3", img: "img.jpg" },
+    { title: "Song 3", src: "music/03. Underwater Theme.mp3", img: "img.jpg" },
+    { title: "Song 4", src: "music/04. Castle Theme.mp3", img: "img.jpg" }
 ];
 
 let currentSong = 0;
