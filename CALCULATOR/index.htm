@@ -4,15 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Calculator</title>
+  <title>Calculator</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      background: linear-gradient(135deg, #1e3a8a, #9333ea);
+      background-size: 100% 100%;
+      background-image: url(img.jpg);
+
+      /* background: linear-gradient(135deg, #1e3a8a, #9333ea); */
     }
     
     .calculator {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.334);
       backdrop-filter: blur(10px);
     }
     
@@ -33,7 +36,7 @@
 
 <body class="flex items-center justify-center min-h-screen text-white">
   
-  <div class="calculator w-80 p-6 rounded-lg shadow-lg">
+  <div style="width: 50%;" class="calculator w-80 p-6 rounded-lg shadow-lg">
     <h1 class="text-2xl font-bold text-center mb-4">📲 Calculator</h1>
     
     <input type="text" id="display" class="w-full p-3 text-2xl bg-gray-900 text-white rounded-lg mb-3" readonly>
@@ -59,48 +62,15 @@
       <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('3')">3</button>
       <button class="btn bg-orange-500 p-3 text-2xl rounded-lg" onclick="appendToDisplay('+')">+</button>
       
-      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg col-span-2" onclick="appendToDisplay('0')">0</button>
+      <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('0')">0</button>
       <button class="btn bg-gray-700 p-3 text-2xl rounded-lg" onclick="appendToDisplay('.')">.</button>
-      <button class="btn bg-green-500 p-3 text-2xl rounded-lg" onclick="calculateResult()">=</button>
+      <button class="btn bg-green-500 p-3 text-2xl rounded-lg col-span-2" onclick="calculateResult()">=</button>
     </div>
   </div>
   
-  <script>
-    const display = document.getElementById("display");
-    
-    function appendToDisplay(value) {
-      display.value += value;
-    }
-    
-    function clearDisplay() {
-      display.value = "";
-    }
-    
-    function deleteLast() {
-      display.value = display.value.slice(0, -1);
-    }
-    
-    function calculateResult() {
-      try {
-        display.value = eval(display.value);
-      } catch {
-        display.value = "Error";
-      }
-    }
-    
-    // Keyboard Support
-    document.addEventListener("keydown", function(event) {
-      if ("0123456789+-*/.%".includes(event.key)) {
-        appendToDisplay(event.key);
-      } else if (event.key === "Enter") {
-        calculateResult();
-      } else if (event.key === "Backspace") {
-        deleteLast();
-      } else if (event.key === "Escape") {
-        clearDisplay();
-      }
-    });
-  </script>
+  <footer style="bottom: 0;background-color: rgb(0, 136, 255);position: fixed;width: 100%;text-align: center;">ZAHID HYDRI</footer>
+  
+  <script src="script.js"></script>
   
 </body>
 
